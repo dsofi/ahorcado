@@ -21,21 +21,19 @@ let letrasUsadas;
 let errores;
 let aciertos;
 
-const agregarLetra = letra => {
-    const letraElement = document.createElement("span");
-    letraElement.innerHTML = letra;
-    letrasUsadasElement.appendChild(letraElement);
-}
 
 const agregarCuerpo = partesCuerpo => {
     ctx.fillStyle = "#fff";
     ctx.fillRect(...partesCuerpo);
 }
 
-const letraIncorrecta = () => {
-    agregarCuerpo(partesCuerpo[errores]); 
+const letraIncorrecta = letra => {
+    agregarCuerpo(partesCuerpo[errores]);        
+    const letraElement = document.createElement("span");
+    letraElement.innerHTML = letra;
+    letrasUsadasElement.appendChild(letraElement); 
     errores++;
-    if(errores === partesCuerpo.length) fin();   
+    if(errores === partesCuerpo.length) fin();
 }
 
 const fin = () => {
@@ -52,15 +50,15 @@ const letraCorrecta = letra => {
         }
     }
     if(aciertos === palabraElegida.length) fin();
+    
 }
 
 const letraIngresada = letra => {
     if(palabraElegida.includes(letra)){
         letraCorrecta(letra);
     } else{
-        letraIncorrecta();
+        letraIncorrecta(letra);        
     }
-    agregarLetra(letra);
     letrasUsadas.push(letra);
 }
 
@@ -91,7 +89,7 @@ const dibujarEstructura = () =>{
     ctx.canvas.height = 160;
     ctx.scale(20,20);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "#d95d39";
+    ctx.fillStyle = "#b10f2e";
     ctx.fillRect(0, 7, 4, 1);
     ctx.fillRect(1, 0, 1, 8);
     ctx.fillRect(2, 0, 3, 1);

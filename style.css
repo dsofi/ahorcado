@@ -1,12 +1,14 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;600&display=swap');
+
 body{
-    background-color: #4a4063;
+    background-color: #351431;
     color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: monospace;
+    font-family: 'Inter', sans-serif;
     font-size: 24px;
 }
 
@@ -35,16 +37,21 @@ body{
     min-width: 16px;
 }
 
+#letrasUsadas{
+    height: 30px;
+}
+
 #startButton{
-    margin-top: 20px;
+    margin-top: 50px;
     appearance: none;
     border: none;
-    width: 200px;
+    width: 300px;
     padding: 10px;
-    background-color: red;
+    background-color: #fdca40;
     color: #fff;
     font-weight: 600;
-    font-family: monospace;
+    font-family: 'Inter', sans-serif;
     font-size: 32px;
     cursor: pointer;
+    letter-spacing: 5px;
 }
